@@ -17,15 +17,15 @@ import { MessagesComponent } from './messages/messages.component';
 import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
-import { ErrorInterceptor } from './_interceptor/error.interceptor'
+import { ErrorInterceptor } from './_interceptor/error.interceptor';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { ServerErrorComponent } from './errors/server-error/server-error.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
 import { JwtInterceptor } from './_interceptor/jwt.interceptor';
-import { MemberEditComponent } from './members/member-edit/member-edit.component'
+import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoadingInterceptor } from './_interceptor/loading.interceptor';
-
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +41,8 @@ import { LoadingInterceptor } from './_interceptor/loading.interceptor';
     NotFoundComponent,
     ServerErrorComponent,
     MemberCardComponent,
-    MemberEditComponent
+    MemberEditComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,7 @@ import { LoadingInterceptor } from './_interceptor/loading.interceptor';
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true }
   ],
   bootstrap: [AppComponent]
 })
